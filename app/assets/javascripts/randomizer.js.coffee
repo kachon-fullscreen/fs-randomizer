@@ -44,7 +44,7 @@ callback = ->
     else
       timeout = 500
 
-    word = get_random_word_from_all_word()
+    word = "<i>" + get_random_word_from_all_word() + "</i>"
     console.log "display: counter " + counter + " " + timeout + " " + word
     $('#word').html(word)
     setTimeout callback, timeout
@@ -54,7 +54,7 @@ callback = ->
     $('#word').removeClass('fadeInDown animated text-success').addClass('fadeInDown animated text-primary').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_animation)
 
   else
-    word = get_random_word_from_word()
+    word = "<em>" + get_random_word_from_word() + "</em>"
     #words = $('#words').val().split("\n")
     #words.remove(word)
     #$('#words').val(words.join("\n"))

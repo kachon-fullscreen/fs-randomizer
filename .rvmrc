@@ -1,0 +1,16 @@
+if [ -f "$rvm_path/scripts/rvm" ]; then
+  source "$rvm_path/scripts/rvm"
+  VERSION_FROM_GEMFILE=$(perl -ne '/^ruby .([0-9\.]+).$/ && print "$1"' Gemfile)
+
+  if [ -f ".ruby-version" ]; then
+    rvm use `cat .ruby-version`
+  fi
+
+  if [[ -n $VERSION_FROM_GEMFILE ]]; then
+    rvm use $VERSION_FROM_GEMFILE
+  fi
+
+  if [ -f ".ruby-gemset" ]; then
+    rvm gemset use --create `cat .ruby-gemset`
+  fi
+fi
