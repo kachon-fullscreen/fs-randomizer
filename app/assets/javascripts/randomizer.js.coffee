@@ -51,7 +51,7 @@ callback = ->
   
     duration = timeout / 1500 + 's'
     $('#word').css({'animation-duration':  duration});
-    $('#word').removeClass('fadeInDown animated text-success').addClass('fadeInDown animated text-primary').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_animation)
+    $('#word').removeClass('fadeInDown animated').addClass('fadeInDown animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_animation)
 
   else
     word = "<em>" + get_random_word_from_word() + "</em>"
@@ -62,7 +62,7 @@ callback = ->
     console.log "answer_words: " + answer_words
     $('#word').html(word)
     $('#word').css({'animation-duration': '1s'});
-    $('#word').removeClass('fadeInDown animated text-primary').addClass('fadeInDown animated text-success').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_animation)
+    $('#word').removeClass('fadeInDown animated').addClass('fadeInDown animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_animation)
 
 remove_animation = ->
   console.log ("remove_animation")
